@@ -6,7 +6,7 @@ angular.module('App')
 				"name": "Blueberries",
 				"type": "fruits",
 				"image": "/data/img/blueberries-690072_640.jpg",
-				"description": "Blueberries are the fruits of a shrub that belong to the heath (Ericaceae) family whose other members include the cranberry and bilberry as well as the azalea."
+				"description": "Blueberries are the fruits of a shrub that belong to the heath (Ericaceae) family."
 			},
 			{
 				"name": "Grapes",
@@ -92,9 +92,14 @@ angular.module('App')
 	]
 
 	function ListController(){
-		console.log("From List Controller")
-		// var dataFruit = $http.get('/data/fruit.json')
-		// console.log(dataFruit.name)
+
 		const vm = this
+
 		vm.data = dataFruit
+		vm.ActiveFruit = {}
+		vm.changeActiveFruit = changeActiveFruit
+
+		function changeActiveFruit(index){
+			vm.ActiveFruit = index
+		}
 	}
