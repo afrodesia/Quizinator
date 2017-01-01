@@ -2,8 +2,29 @@ body {
   background: #fff;
   color: #333; }
 
+img, object {
+  display: block;
+  border: 0;
+  max-width: 100%;
+  height: auto; }
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-kit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
 .ListCtrl {
-  color: red;
-  background: #333;
+  color: #333;
   padding: 10px;
-  font-size: 2rem; }
+  font-size: 1.3rem; }
+
+.col-sm-4 {
+  width: 30%;
+  float: left; }

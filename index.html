@@ -34,9 +34,16 @@
   <p>This is site that shows you some basic info of fruits that are healty. When you have finished learning this health stuff. Please feel free to test yourself by taking the quiz.</p>
 
   <div class="ListCtrl" ng-controller="listCtrl as list"> 
-    {{ list.data}}
-  </div>
 
+  <div class="col-sm-4">
+      <div ng-repeat="fruit in list.data">
+          <h2>{{ fruit.name }}</h2>
+          <img ng-src="{{fruit.image}}" />
+          <p>{{ fruit.description }}</p>
+      </div>
+  </div>
+    
+</div>
 
 
 
