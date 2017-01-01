@@ -1,0 +1,9 @@
+body {
+  background: #fff;
+  color: #333; }
+
+.ListCtrl {
+  color: red;
+  background: #333;
+  padding: 10px;
+  font-size: 2rem; }
