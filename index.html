@@ -40,7 +40,7 @@
 
 <div class="container">
 
-  <section class="ListCtrl" ng-controller="listCtrl as list"> 
+  <section class="ListCtrl" ng-controller="listCtrl as list" ng-hide="list.quizActive"> 
     
     <form class="form-inline well well-sm clearfix">
       <i class="fa fa-search" aria-hidden="true"></i>
@@ -49,6 +49,8 @@
         class="form-control" 
         ng-model="list.search"
       />
+
+      <button class="btn btn-warning pull-right" ng-click="list.activateQuiz()"><b>Start Quiz</b></button>
     </form>
 
       <div class="row">

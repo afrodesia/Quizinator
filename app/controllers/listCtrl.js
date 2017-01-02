@@ -7,10 +7,15 @@ angular.module('App')
 		vm.data = dataFruit;
 		vm.activeFruit = {};
 		vm.changeActiveFruit = changeActiveFruit;
+		vm.activateQuiz = activateQuiz;
 		vm.search = '';
+		vm.quizActive = false;
 
 		function changeActiveFruit(index){
 			this.activeFruit = index;
+		}
+		function activateQuiz(){
+			vm.quizActive = true;
 		}
 	}
 
