@@ -1,7 +1,20 @@
 angular.module('App')
-	.controller('listCtrl', ListController)
+	.controller('listCtrl', ListController)	;
 
-	const dataFruit = [
+	function ListController(){
+
+		// var vm = this
+		this.data = dataFruit;
+		this.activeFruit = {};
+		this.changeActiveFruit = changeActiveFruit;
+
+		function changeActiveFruit(index){
+			this.activeFruit = index;
+		}
+	}
+
+
+var dataFruit = [
 			{
 				"name": "Blueberries",
 				"type": "fruits",
@@ -90,16 +103,3 @@ angular.module('App')
 			}			
 			
 	]
-
-	function ListController(){
-
-		const vm = this
-
-		vm.data = dataFruit
-		vm.ActiveFruit = {}
-		vm.changeActiveFruit = changeActiveFruit
-
-		function changeActiveFruit(index){
-			vm.ActiveFruit = index
-		}
-	}

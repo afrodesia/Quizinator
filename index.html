@@ -40,7 +40,7 @@
 
 <div class="container">
 
-  <div class="ListCtrl" ng-controller="listCtrl as list"> 
+  <section class="ListCtrl" ng-controller="listCtrl as list"> 
       <div class="row">
           <article class="col-sm-6" ng-repeat="fruit in list.data">
             <div class="well well-sm">
@@ -50,11 +50,11 @@
                 </div>
                 <div class="col-md-6">
                    <h3>{{ fruit.name }}</h3>
-                  <p>{{ fruit.description }}</p>
+                  <!-- <p>{{ fruit.description }}</p> -->
                     <button 
                       class="btn btn-success pull-right"
                       data-toggle="modal"
-                      data-target="#ListInfo"
+                      data-target="#list-info"
                       ng-click="list.changeActiveFruit(fruit)"
                       >Learn More</button>
                   
@@ -63,8 +63,30 @@
               <div>
             <div>
           </article>
-      </div>    
-  </div>
+
+          <article class="modal" id="list-info">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="model-header">
+                  <h2>{{ list.activeFruit.name }}</h2>
+                </div>
+                <div class="model-body">
+                <div class="row">
+                  <div class="col-xs-8 xs-offset-2">
+                    <img ng-src="{{ list.activeFruit.image }}" />
+                  </div>
+                </div>
+                <div class="row">
+                  <p>{{ list.activeFruit.description }}</p>
+                </div>
+                </div>
+              </div>
+            </div>
+          </article>     
+      </div> 
+  </section>
+
+ 
 
 </div><!-- End Container -->
 
