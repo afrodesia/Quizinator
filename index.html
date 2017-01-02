@@ -41,8 +41,19 @@
 <div class="container">
 
   <section class="ListCtrl" ng-controller="listCtrl as list"> 
+    
+    <form class="form-inline well well-sm clearfix">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <input type="text" 
+        placeholder="Search..." 
+        class="form-control" 
+        ng-model="list.search"
+      />
+    </form>
+
       <div class="row">
-          <article class="col-sm-6" ng-repeat="fruit in list.data">
+          <article class="col-sm-6" 
+            ng-repeat="fruit in list.data | filter:list.search">
             <div class="well well-sm">
               <div class="row">
                 <div class="col-md-6">
@@ -56,9 +67,7 @@
                       data-toggle="modal"
                       data-target="#list-info"
                       ng-click="list.changeActiveFruit(fruit)"
-                      >Learn More</button>
-                  
-                  
+                      >Learn More</button> 
                 </div>
               <div>
             <div>
@@ -72,12 +81,13 @@
                 </div>
                 <div class="model-body">
                 <div class="row">
-                  <div class="col-xs-8 xs-offset-2">
-                    <img ng-src="{{ list.activeFruit.image }}" />
+                  <div class="col-xs-8">
+                    <img ng-src="{{ list.activeFruit.image }}" class="img-responsive" />
                   </div>
                 </div>
                 <div class="row">
-                  <p>{{ list.activeFruit.description }}</p>
+                  <p class="col-xs-8">{{ list.activeFruit.description }}</p>
+                  <button class="btn btn-danger pull-right" data-dismiss="modal">close</button>
                 </div>
                 </div>
               </div>
